@@ -1,9 +1,11 @@
 var express = require('express');
+var path = require('path');
+
 
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-	var filePath = path.normalize(__dirname + "index.html");
+	var filePath = path.normalize(__dirname + "/index.html");
     response.sendfile(filePath, {req: req});
 
 //  response.send('Hello World 2!');
